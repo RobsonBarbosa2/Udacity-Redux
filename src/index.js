@@ -7,13 +7,14 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./routes/error-page";
 import Contact from "./routes/contact";
-import Dashboard from "./routes/dashboard";
+import UserList from "./routes/UserList";
+import "./dist/output.css";
+import Nav from "./routes/components/Nav";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Dashboard />,
-    errorElement: <ErrorPage />,
+    element: <UserList />,
   },
   {
     path: "contacts/:contactId",
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <Nav />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
