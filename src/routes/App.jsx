@@ -6,16 +6,14 @@ import Contact from "./contact";
 import UserList from "./UserList";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Nav from "./components/Nav";
-import Dashboard from "./Dashboard";
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Dashboard />,
+    element: <Contact />,
   },
   {
     path: "contacts/:contactId",
-    element: <Dashboard />,
+    element: <Contact />,
   },
 ]);
 class App extends Component {
@@ -27,6 +25,7 @@ class App extends Component {
     return (
       <div>
         <Nav />
+        {console.log("DASHBOARD", this.props.authedUser)}
         {this.props.authedUser === null ? (
           <UserList />
         ) : (
@@ -39,7 +38,7 @@ class App extends Component {
 
 function mapStateToProps({ authedUser }) {
   return {
-    authedUser: authedUser,
+    authedUser,
   };
 }
 
