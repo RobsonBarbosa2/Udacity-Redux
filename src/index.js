@@ -10,6 +10,15 @@ import Contact from "./routes/contact";
 import UserList from "./routes/UserList";
 import "./dist/output.css";
 import Nav from "./routes/components/Nav";
+import { configureStore } from "@reduxjs/toolkit";
+import usersReducer from "./reducers/usersReducer";
+import { Provider } from "react-redux";
+
+export const store = configureStore({
+  reducer: {
+    users: usersReducer,
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -24,10 +33,10 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Nav />
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
