@@ -12,13 +12,14 @@ class UserList extends Component {
             Select your user
           </span>
           <div className="">
-            <User />
-            <User />
             <h3>
               <ul>
-                {this.props.usersArray.map((user) => (
+                {this.props.usersList.map((user) => (
+                  // <li key={user.id}>
+                  //   <User user={user} />
+                  // </li>
                   <li key={user.id}>
-                    <User user={user} />
+                    <User user={user}></User>
                   </li>
                 ))}
               </ul>
@@ -33,7 +34,7 @@ class UserList extends Component {
 function mapStateToProps({ users }) {
   const usersArray = Object.values(users);
   return {
-    usersArray,
+    usersList: usersArray,
   };
 }
 

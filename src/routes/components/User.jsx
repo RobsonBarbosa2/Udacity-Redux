@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 class User extends Component {
   render() {
-    const user = this.props;
-
+    const { user } = this.props;
+    console.log("teste:", user);
     return (
       <>
         <div className="flex flex-col items-center">
