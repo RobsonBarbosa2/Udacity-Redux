@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { setAuthedUser } from "../../actions/authedUser";
 
 class User extends Component {
   handleSelectUser = (e) => {
     e.preventDefault();
-    console.log("Clicked");
+    const { user, dispatch } = this.props;
+
+    console.log("Clicked", user.id);
+    dispatch(setAuthedUser(user.id));
   };
   render() {
     const { user } = this.props;
-
     return (
       <>
         <div className="flex flex-col items-center">

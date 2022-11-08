@@ -6,14 +6,16 @@ import Contact from "./contact";
 import UserList from "./UserList";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Nav from "./components/Nav";
+import Dashboard from "./Dashboard";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <UserList />,
+    element: <Dashboard />,
   },
   {
     path: "contacts/:contactId",
-    element: <Contact />,
+    element: <Dashboard />,
   },
 ]);
 class App extends Component {
@@ -25,10 +27,20 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <RouterProvider router={router} />
+        {this.props.authedUser === null ? (
+          <UserList />
+        ) : (
+          <RouterProvider router={router} />
+        )}
       </div>
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser: authedUser,
+  };
+}
+
+export default connect(mapStateToProps)(App);
