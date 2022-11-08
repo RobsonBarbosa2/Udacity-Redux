@@ -6,10 +6,12 @@ import Contact from "./contact";
 import UserList from "./UserList";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Nav from "./components/Nav";
+import Question from "./Question";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Contact />,
+    element: <Question />,
   },
   {
     path: "contacts/:contactId",
@@ -26,7 +28,7 @@ class App extends Component {
       <div>
         <Nav />
         {console.log("DASHBOARD", this.props.authedUser)}
-        {this.props.authedUser === null ? (
+        {this.props.authedUser == null ? (
           <UserList />
         ) : (
           <RouterProvider router={router} />
