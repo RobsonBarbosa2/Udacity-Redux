@@ -11,8 +11,8 @@ class Question extends Component {
       <div>
         <ul>
           {questionList.map((question) => (
-            <li key={question.id}>
-              <span>{question.id}</span>
+            <li key={question.id} className="my-10">
+              {/* <span>{question.id}</span> */}
               <UnitQuestion />
             </li>
           ))}

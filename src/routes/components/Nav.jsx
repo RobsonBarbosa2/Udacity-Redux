@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 
-export default class Nav extends Component {
+class Nav extends Component {
   render() {
     return (
       <>
@@ -54,24 +55,27 @@ export default class Nav extends Component {
                   </li>  */}
                 </ul>
               </div>
-              <div className="md:flex items-center justify-end hidden">
-                <div className="flex items-center">
-                  <span className="pr-4">John Doe</span>
-                  <div className="h-full flex items-center">
-                    <button
-                      aria-label="dropdown"
-                      className="focus:outline-none focus:text-gray-900 text-gray-800 border-b-2 border-transparent focus:border-gray-800 hover:text-gray-900 w-full flex items-center justify-end relative cursor-pointer"
-                      onclick="dropdownHandler(this)"
-                    >
-                      <img
-                        className="rounded-full h-10 w-10 object-cover"
-                        src="https://i.ibb.co/GTLTzZY/Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1.png"
-                        alt="Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1"
-                      />
-                    </button>
+              {console.log("Props nav: ", this.props)}
+              {this.props.authedUser !== null ? (
+                <div className="md:flex items-center justify-end hidden">
+                  <div className="flex items-center">
+                    <span className="pr-4">{this.props.authedUser[0]}</span>
+                    <div className="h-full flex items-center">
+                      <button
+                        aria-label="dropdown"
+                        className="focus:outline-none focus:text-gray-900 text-gray-800 border-b-2 border-transparent focus:border-gray-800 hover:text-gray-900 w-full flex items-center justify-end relative cursor-pointer"
+                        onclick="dropdownHandler(this)"
+                      >
+                        <img
+                          className="rounded-full h-10 w-10 object-cover"
+                          src="https://i.ibb.co/GTLTzZY/Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1.png"
+                          alt="Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1"
+                        />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : null}
             </div>
           </nav>
         </div>
@@ -79,3 +83,11 @@ export default class Nav extends Component {
     );
   }
 }
+
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser,
+  };
+}
+
+export default connect(mapStateToProps)(Nav);

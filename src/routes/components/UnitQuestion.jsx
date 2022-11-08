@@ -4,13 +4,13 @@ import { connect } from "react-redux";
 class QuestionUnit extends Component {
   render() {
     return (
-      <div>
+      <div className="flex flex-col items-center bg-indigo-700 mx-80 py-10">
         <div>Asked by Author</div>
         <div>{/* <img src={} alt={"profile"} /> */}</div>
         <div>
           <div>Would you rather...</div>
 
-          <form>
+          <form className="flex flex-col border-2 items-center">
             <div>
               <input name={1} type="radio" value="optionOne" />
               <label htmlFor="optionOne">Texto1</label>
@@ -18,9 +18,6 @@ class QuestionUnit extends Component {
             <div className="">
               <input name={1} type="radio" value="optionTwo" />
               <label htmlFor="optionTwo">Texto2</label>
-            </div>
-            <div>
-              <button>Submit</button>
             </div>
           </form>
         </div>
