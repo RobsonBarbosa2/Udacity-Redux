@@ -10,15 +10,11 @@ import Contact from "./routes/contact";
 import UserList from "./routes/UserList";
 import "./dist/output.css";
 import Nav from "./routes/components/Nav";
-import { configureStore } from "@reduxjs/toolkit";
-import usersReducer from "./reducers/usersReducer";
+import reducer from "./reducers";
 import { Provider } from "react-redux";
+import { createStore } from "redux";
 
-export const store = configureStore({
-  reducer: {
-    users: usersReducer,
-  },
-});
+const store = createStore(reducer, middleware);
 
 const router = createBrowserRouter([
   {
