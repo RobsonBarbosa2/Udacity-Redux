@@ -59,7 +59,7 @@ class Nav extends Component {
               {this.props.authedUser !== null ? (
                 <div className="md:flex items-center justify-end hidden">
                   <div className="flex items-center">
-                    <span className="pr-4">{this.props.authedUser[0]}</span>
+                    <span className="pr-4">{this.props.authedUser.name}</span>
                     <div className="h-full flex items-center">
                       <button
                         aria-label="dropdown"

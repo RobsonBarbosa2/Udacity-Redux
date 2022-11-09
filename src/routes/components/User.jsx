@@ -7,8 +7,7 @@ class User extends Component {
     e.preventDefault();
     const { user, dispatch } = this.props;
 
-    console.log("Clicked", user.id);
-    dispatch(setAuthedUser(user.id));
+    dispatch(setAuthedUser(user));
   };
   render() {
     const { user } = this.props;

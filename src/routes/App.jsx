@@ -27,7 +27,6 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        {console.log("DASHBOARD", this.props.authedUser)}
         {this.props.authedUser == null ? (
           <UserList />
         ) : (
