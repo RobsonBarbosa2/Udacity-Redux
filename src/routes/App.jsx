@@ -4,9 +4,15 @@ import { handleInitialData } from "../actions/shared";
 import ErrorPage from "./error-page";
 import Contact from "./contact";
 import UserList from "./UserList";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  useParams,
+} from "react-router-dom";
 import Nav from "./components/Nav";
 import Question from "./Question";
+import QuestionPage from "./QuestionPage";
 
 const router = createBrowserRouter([
   {
@@ -14,8 +20,8 @@ const router = createBrowserRouter([
     element: <Question />,
   },
   {
-    path: "contacts/:contactId",
-    element: <Contact />,
+    path: "questions/:id",
+    element: <QuestionPage />,
   },
 ]);
 class App extends Component {

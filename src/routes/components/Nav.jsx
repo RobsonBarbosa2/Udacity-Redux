@@ -55,7 +55,6 @@ class Nav extends Component {
                   </li>  */}
                 </ul>
               </div>
-              {console.log("Props nav: ", this.props)}
               {this.props.authedUser !== null ? (
                 <div className="md:flex items-center justify-end hidden">
                   <div className="flex items-center">
@@ -68,7 +67,7 @@ class Nav extends Component {
                       >
                         <img
                           className="rounded-full h-10 w-10 object-cover"
-                          src="https://i.ibb.co/GTLTzZY/Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1.png"
+                          src={this.props.authedUser.avatarURL}
                           alt="Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1"
                         />
                       </button>

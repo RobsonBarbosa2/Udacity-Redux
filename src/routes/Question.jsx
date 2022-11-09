@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UnitQuestion from "./components/UnitQuestion";
+import { redirect, Link } from "react-router-dom";
 
 class Question extends Component {
   render() {
@@ -11,10 +12,11 @@ class Question extends Component {
       <div>
         <ul>
           {questionList.map((question) => (
-            <li key={question.id} className="my-10">
-              {/* <span>{question.id}</span> */}
-              <UnitQuestion />
-            </li>
+            <Link to={`/questions/${question.id}`}>
+              <li key={question.id} className="my-10">
+                <UnitQuestion quest={question} />
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
