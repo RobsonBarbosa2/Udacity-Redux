@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
@@ -19,6 +19,10 @@ function QuestionPage(props) {
     //http://react.tips/radio-buttons-in-reactjs/
     //https://upmostly.com/tutorials/react-error-thissetstate-is-not-a-function-how-to-fix
   }
+  function returnState() {
+    return React.state.selectedOption;
+  }
+  const [selectedOption, setSelectedOption] = useState(null);
 
   return (
     <div className="flex flex-col items-center bg-indigo-300 mx-80 py-10">
@@ -35,21 +39,19 @@ function QuestionPage(props) {
         <div>Would you rather...</div>
 
         <form className="flex flex-col border-2 items-center">
-          <div>
+          <div onClick={() => setSelectedOption("optionOne")}>
             <input
-              onChange={handleOptionChange}
-              checked={React.state.selectedOption === "optionOne"}
+              checked={selectedOption === "optionOne"}
               name={1}
               type="radio"
               value="optionOne"
             />
             <label htmlFor="optionOne">{questions[id].optionOne.text}</label>
           </div>
-          <div className="">
+          <div onClick={() => setSelectedOption("optionTwo")}>
             <input
               name={1}
-              onChange={handleOptionChange}
-              checked={React.state.selectedOption === "optionTwo"}
+              checked={selectedOption === "optionTwo"}
               type="radio"
               value="optionTwo"
             />
