@@ -13,6 +13,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Question />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "questions/:id",
@@ -28,7 +29,7 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        {this.props.authedUser == null ? (
+        {this.props.authedUser === null ? (
           <UserList />
         ) : (
           <RouterProvider router={router} />
