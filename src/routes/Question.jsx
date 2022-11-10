@@ -7,7 +7,6 @@ class Question extends Component {
   render() {
     const questionList = this.props.questionsList;
 
-    console.log(this.props);
     return (
       <div>
         <ul>
