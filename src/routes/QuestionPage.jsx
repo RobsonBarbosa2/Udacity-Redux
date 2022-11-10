@@ -37,6 +37,9 @@ function QuestionPage(props) {
 
       <div>
         <div>Would you rather...</div>
+        {questions[id].optionOne.votes.map((item) => {
+          return <div>{item}</div>;
+        })}
 
         <form className="flex flex-col border-2 items-center">
           <div onClick={() => setSelectedOption("optionOne")}>
