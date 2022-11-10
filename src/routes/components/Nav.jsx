@@ -8,22 +8,22 @@ class Nav extends Component {
         <div className="h-full w-full">
           <nav
             role="navigation"
-            className="md:px-6 lg:px-4 w-full mx-auto hidden md:block bg-white shadow-md"
+            className="px-6 lg:px-4 w-full mx-auto block bg-white shadow-md"
           >
             <div className="container  justify-between h-20 flex items-center bg-white md:items-stretch mx-auto border-b border-gray-200">
               <div className="h-full flex items-center">
-                <ul className="pr-12 md:flex items-center h-full hidden">
+                <ul className="pr-12 sm:flex items-center h-full">
                   <li>
                     <a
-                      href="javascript:void(0)"
-                      className="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 tracking-normal border-b-2 border-white"
+                      href="/"
+                      className="focus:outline-none border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 tracking-normal border-b-2 border-white"
                     >
                       Home
                     </a>
                   </li>
                   <li>
                     <a
-                      href="javascript:void(0)"
+                      href="/new"
                       className="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 mx-6 tracking-normal"
                     >
                       New Question
