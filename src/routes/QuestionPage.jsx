@@ -37,10 +37,6 @@ function QuestionPage(props) {
 
       <div>
         <div>Would you rather...</div>
-        {questions[id].optionOne.votes.map((item) => {
-          return <div>{item}</div>;
-        })}
-
         <form className="flex flex-col border-2 items-center">
           <div onClick={() => setSelectedOption("optionOne")}>
             <input
@@ -48,12 +44,14 @@ function QuestionPage(props) {
               name={1}
               type="radio"
               value="optionOne"
+              onChange={() => setSelectedOption("optionOne")}
             />
             <label htmlFor="optionOne">{questions[id].optionOne.text}</label>
           </div>
           <div onClick={() => setSelectedOption("optionTwo")}>
             <input
               name={1}
+              onChange={() => setSelectedOption("optionTwo")}
               checked={selectedOption === "optionTwo"}
               type="radio"
               value="optionTwo"
