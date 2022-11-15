@@ -13,6 +13,7 @@ import {
 import Nav from "./components/Nav";
 import Question from "./Question";
 import QuestionPage from "./QuestionPage";
+import NewQuestion from "./NewQuestion";
 
 class App extends Component {
   componentDidMount() {
@@ -27,9 +28,14 @@ class App extends Component {
     function Quest() {
       let { id } = useParams();
       return <QuestionPage id={id} />;
+
       //https://reactrouter.com/en/main/hooks/use-params
     }
 
+    function NewQuest() {
+      return <NewQuestion />;
+      //https://reactrouter.com/en/main/hooks/use-params
+    }
     return (
       <div>
         {this.props.authedUser === null ? (
@@ -40,6 +46,7 @@ class App extends Component {
             <Routes>
               <Route path="/" exact element={<Home />} />
               <Route path="questions/:id" element={<Quest />} />
+              <Route path="new" element={<NewQuest />} />
             </Routes>
           </Router>
         )}
