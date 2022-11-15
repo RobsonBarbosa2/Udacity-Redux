@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class Nav extends Component {
   render() {
@@ -14,28 +15,28 @@ class Nav extends Component {
               <div className="h-full flex items-center">
                 <ul className="pr-12 sm:flex items-center h-full">
                   <li>
-                    <a
-                      href="/"
-                      className="focus:outline-none border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 tracking-normal border-b-2 border-white"
+                    <Link
+                      to="/"
+                      className="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 mr-6 tracking-normal"
                     >
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="/new"
-                      className="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 mx-6 tracking-normal"
+                    <Link
+                      to="/"
+                      className="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 mr-6 tracking-normal"
                     >
-                      New Question
-                    </a>
+                      New
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="javascript:void(0)"
+                    <Link
+                      to="/"
                       className="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 mr-6 tracking-normal"
                     >
                       Ranking
-                    </a>
+                    </Link>
                   </li>
                   {/* <li>
                     <a

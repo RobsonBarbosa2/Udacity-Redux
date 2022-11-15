@@ -2,14 +2,14 @@ import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
-class QuestionPage extends Component {
+class DetailQuestion extends Component {
   state = {
     selectedOption: null,
     voted: null,
   };
 
   render() {
-    const { id } = this.props;
+    const id = "8xf0y6ziyjabvozdd253nd";
     const { questions, users } = this.props;
 
     const hasVoted = () => {
@@ -26,7 +26,6 @@ class QuestionPage extends Component {
 
     const handleClick = (e) => {
       e.preventDefault();
-      console.log("clicked");
     };
 
     const verifyVote = () => {
@@ -82,7 +81,7 @@ class QuestionPage extends Component {
               <div
                 onClick={() =>
                   this.setState(() => ({
-                    selectedOption: "optionTwo",
+                    selectedOption: "optionOne",
                   }))
                 }
               >
@@ -117,13 +116,11 @@ class QuestionPage extends Component {
 }
 
 function mapStateToProps({ authedUser, users, questions }, props) {
-  const { id } = props;
   return {
-    id,
     authedUser,
     questions,
     users,
   };
 }
 
-export default connect(mapStateToProps)(QuestionPage);
+export default connect(mapStateToProps)(DetailQuestion);
