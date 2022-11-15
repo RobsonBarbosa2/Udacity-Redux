@@ -7,7 +7,7 @@ class QuestionUnit extends Component {
     const { author, optionOne, optionTwo } = quest;
 
     return (
-      <div className="flex flex-col items-center bg-indigo-300 mx-80 py-10">
+      <div className="flex flex-col items-center bg-indigo-300 md:mx-80 py-10">
         <div>Asked by Author {users[author].name}</div>
         <div>
           <img
