@@ -39,6 +39,7 @@ class Nav extends Component {
                       Ranking
                     </Link>
                   </li>
+
                   {/* <li>
                     <a
                       href="javascript:void(0)"
@@ -67,14 +68,16 @@ class Nav extends Component {
                         className="focus:outline-none focus:text-gray-900 text-gray-800 border-b-2 border-transparent focus:border-gray-800 hover:text-gray-900 w-full flex items-center justify-end relative cursor-pointer"
                         onclick="dropdownHandler(this)"
                       >
-                        <img
-                          className="rounded-full h-10 w-10 object-cover"
-                          src={this.props.authedUser.avatarURL}
-                          alt="Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1"
-                        />
+                        <div>
+                          <img
+                            className="rounded-full h-10 w-10 object-cover"
+                            src={this.props.authedUser.avatarURL}
+                            alt="Unsplash-Avatars-0000s-0035-azamat-zhanisov-a5s-RFie-A3-BY-unsplash-1"
+                          />
+                        </div>
                       </button>
+                      <Logout />
                     </div>
-                    <Logout />
                   </div>
                 </div>
               ) : null}

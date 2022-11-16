@@ -34,6 +34,7 @@ class NavQuestion extends Component {
                   <div>
                     <img src={user.image} alt={user.name} />
                     <div>{user.name}</div>
+                    <span></span>
                     <div>Questions: {user.questions}</div>
                     <div>Answers: {user.answers}</div>
                     <div>Score: {user.scorePoints}</div>

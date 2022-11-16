@@ -12,7 +12,7 @@ class Logout extends Component {
   render() {
     return (
       <div>
-        <div className=" items-center  md:mx-80 py-10">
+        <div className="">
           <button onClick={this.handleSelectUser}>Logout</button>
         </div>
       </div>
