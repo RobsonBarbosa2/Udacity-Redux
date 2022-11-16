@@ -33,7 +33,7 @@ class Nav extends Component {
                   </li>
                   <li>
                     <Link
-                      to="/ranking"
+                      to="/leaderboard"
                       className="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 mr-6 tracking-normal"
                     >
                       Ranking
