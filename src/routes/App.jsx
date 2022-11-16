@@ -14,6 +14,7 @@ import Nav from "./components/Nav";
 import Question from "./Question";
 import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
+import RankingBoards from "./RankingBoards";
 
 class App extends Component {
   componentDidMount() {
@@ -36,6 +37,10 @@ class App extends Component {
       return <NewQuestion />;
       //https://reactrouter.com/en/main/hooks/use-params
     }
+    function Rank() {
+      return <RankingBoards />;
+      //https://reactrouter.com/en/main/hooks/use-params
+    }
     return (
       <div>
         {this.props.authedUser === null ? (
@@ -47,6 +52,7 @@ class App extends Component {
               <Route path="/" exact element={<Home />} />
               <Route path="questions/:id" element={<Quest />} />
               <Route path="new" element={<NewQuest />} />
+              <Route path="ranking" element={<Rank />} />
             </Routes>
           </Router>
         )}
