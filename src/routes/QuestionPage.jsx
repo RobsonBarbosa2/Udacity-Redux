@@ -1,11 +1,24 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
+import { handleAddAnswerQuestion } from "../actions/questions";
 
 class QuestionPage extends Component {
   state = {
     selectedOption: null,
     voted: null,
+  };
+
+  handleClick = (e) => {
+    e.preventDefault();
+    const { dispatch } = this.props;
+    console.log("clicked");
+    dispatch(
+      handleAddAnswerQuestion({
+        authedUser: this.props.authedUser.id,
+        qid: this.props.id,
+        answer: this.state.selectedOption,
+      })
+    );
   };
 
   render() {
@@ -22,11 +35,6 @@ class QuestionPage extends Component {
         questions[id].optionOne.votes.includes(authedUser.id) ||
         questions[id].optionTwo.votes.includes(authedUser.id)
       );
-    };
-
-    const handleClick = (e) => {
-      e.preventDefault();
-      console.log("clicked");
     };
 
     const verifyVote = () => {
@@ -104,7 +112,7 @@ class QuestionPage extends Component {
               <button
                 type={"button"}
                 className="cursor-pointer disabled:bg-slate-500 mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xs"
-                onClick={handleClick}
+                onClick={this.handleClick}
               >
                 Vote
               </button>

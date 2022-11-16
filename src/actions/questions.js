@@ -1,7 +1,15 @@
-import { saveQuestion } from "../utils/api";
+import { saveQuestion, saveQuestionAnswer } from "../utils/api";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const ADD_QUESTION = "ADD_QUESTION";
+export const SAVE_ANSWER = "SAVE_ANSWER";
+
+export function receiveQuestions(questions) {
+  return {
+    type: RECEIVE_QUESTIONS,
+    questions,
+  };
+}
 
 function addQuestion(question) {
   console.log("addQuestion", question);
@@ -19,9 +27,18 @@ export function handleAddQuestion(question) {
   };
 }
 
-export function receiveQuestions(questions) {
+function AddAnswerQuestion(answer) {
+  console.log("Answer:", answer);
   return {
-    type: RECEIVE_QUESTIONS,
-    questions,
+    type: SAVE_ANSWER,
+    answer,
+  };
+}
+export function handleAddAnswerQuestion(answer) {
+  console.log("handleAddAnswerQuestion:", answer);
+  return (dispatch, getState) => {
+    return saveQuestionAnswer(answer).then(() =>
+      dispatch(AddAnswerQuestion(answer))
+    );
   };
 }
