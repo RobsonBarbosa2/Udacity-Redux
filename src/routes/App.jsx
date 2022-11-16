@@ -51,7 +51,7 @@ class App extends Component {
             <Routes>
               <Route path="/" exact element={<Home />} />
               <Route path="questions/:id" element={<Quest />} />
-              <Route path="new" element={<NewQuest />} />
+              <Route path="add" element={<NewQuest />} />
               <Route path="leaderboard" element={<Rank />} />
             </Routes>
           </Router>

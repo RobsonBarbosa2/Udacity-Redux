@@ -22,6 +22,9 @@ class QuestionPage extends Component {
         answer: this.state.selectedOption,
       })
     );
+    this.setState(() => ({
+      voted: true,
+    }));
   };
 
   hasVoted = () => {
