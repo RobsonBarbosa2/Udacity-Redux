@@ -1,4 +1,8 @@
-import { RECEIVE_AUTHED_USER, SET_AUTHED_USER } from "../actions/authedUser";
+import {
+  RECEIVE_AUTHED_USER,
+  SET_AUTHED_USER,
+  UN_AUTH,
+} from "../actions/authedUser";
 
 export default function authedUser(state = null, action) {
   switch (action.type) {
@@ -9,6 +13,8 @@ export default function authedUser(state = null, action) {
       };
     case RECEIVE_AUTHED_USER:
       return action.authedUser;
+    case UN_AUTH:
+      return null;
     default:
       return state;
   }

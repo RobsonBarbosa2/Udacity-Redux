@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
 
 class Nav extends Component {
   render() {
@@ -73,6 +74,7 @@ class Nav extends Component {
                         />
                       </button>
                     </div>
+                    <Logout />
                   </div>
                 </div>
               ) : null}
