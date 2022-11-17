@@ -7,7 +7,7 @@ class Logout extends Component {
     e.preventDefault();
     const { dispatch } = this.props;
     dispatch(logoutUser());
-    console.log("clicked logout");
+    // console.log("clicked logout");
   };
   render() {
     return (

@@ -63,11 +63,7 @@ class Nav extends Component {
                   <div className="flex items-center">
                     <span className="pr-4">{this.props.authedUser.name}</span>
                     <div className="h-full flex items-center">
-                      <button
-                        aria-label="dropdown"
-                        className="focus:outline-none focus:text-gray-900 text-gray-800 border-b-2 border-transparent focus:border-gray-800 hover:text-gray-900 w-full flex items-center justify-end relative cursor-pointer"
-                        onclick="dropdownHandler(this)"
-                      >
+                      <button className="focus:outline-none focus:text-gray-900 text-gray-800 border-b-2 border-transparent focus:border-gray-800 hover:text-gray-900 w-full flex items-center justify-end relative cursor-pointer">
                         <div>
                           <img
                             className="rounded-full h-10 w-10 object-cover"

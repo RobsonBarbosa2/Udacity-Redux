@@ -6,7 +6,6 @@ class UserList extends Component {
   render() {
     return (
       <Fragment>
-        {console.log(this.props)}
         <div className="flex w-full flex-col">
           <span className="text-indigo-700 text-3xl w-full text-center mb-10">
             Select your user
