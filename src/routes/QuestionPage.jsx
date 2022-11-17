@@ -27,6 +27,23 @@ class QuestionPage extends Component {
     }));
   };
 
+  verifyPercentage = (option) => {
+    const { questions, id } = this.props;
+    const question = questions[id];
+    const total =
+      question.optionOne.votes.length + question.optionTwo.votes.length;
+    const optionVotes = question[option].votes.length;
+    const percentage = (optionVotes / total) * 100;
+    return percentage;
+  };
+
+  verifyQtdVotes = (option) => {
+    const { questions, id } = this.props;
+    const question = questions[id];
+    const optionVotes = question[option].votes.length;
+    return optionVotes;
+  };
+
   hasVoted = () => {
     const { authedUser } = this.props;
     const { id } = this.props;
@@ -112,6 +129,22 @@ class QuestionPage extends Component {
                       <label htmlFor="optionOne">
                         {questions[id].optionOne.text}
                       </label>
+                      <div>
+                        {this.hasVoted() === true
+                          ? this.verifyPercentage("optionOne").toFixed(2) + "%"
+                          : null}
+                      </div>
+                      <div
+                        className={`${
+                          this.verifyVote() === "optionOne"
+                            ? "bg-green-500"
+                            : null
+                        }`}
+                      >
+                        {this.hasVoted() === true
+                          ? this.verifyQtdVotes("optionOne") + " votes"
+                          : null}
+                      </div>
                     </div>
                     <di>
                       <input
@@ -125,15 +158,35 @@ class QuestionPage extends Component {
                       <label htmlFor="optionTwo">
                         {questions[id].optionTwo.text}
                       </label>
+                      <div>
+                        {this.hasVoted() === true
+                          ? this.verifyPercentage("optionTwo").toFixed(2) + "%"
+                          : null}
+                      </div>
+                      <div
+                        className={`${
+                          this.verifyVote() === "optionTwo"
+                            ? "bg-green-500"
+                            : null
+                        }`}
+                      >
+                        {this.hasVoted() === true
+                          ? this.verifyQtdVotes("optionTwo") + " votes"
+                          : null}
+                      </div>
                     </di>
                     <div className="">
-                      <button
-                        type={"button"}
-                        className="mt-5 cursor-pointer disabled:bg-slate-500 mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xs"
-                        onClick={this.handleClick}
-                      >
-                        Vote
-                      </button>
+                      {this.state.voted !== true ? (
+                        <button
+                          type={"button"}
+                          className="mt-5 cursor-pointer disabled:bg-slate-500 mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xs"
+                          onClick={this.handleClick}
+                        >
+                          Vote
+                        </button>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </form>
                 </div>
