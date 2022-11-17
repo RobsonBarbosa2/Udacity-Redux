@@ -1,11 +1,13 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
+import { handleReceiveUsers } from "../actions/users";
 
 class NavQuestion extends Component {
   render() {
     let leaderboard = [];
-
+    const { dispatch } = this.props;
+    dispatch(handleReceiveUsers());
     const { users } = this.props;
     Object.values(users).map((user) => {
       leaderboard.push({
