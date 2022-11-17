@@ -12,7 +12,7 @@ export function receiveQuestions(questions) {
 }
 
 function addQuestion(question) {
-  console.log("addQuestion", question);
+  // console.log("addQuestion", question);
   return {
     type: ADD_QUESTION,
     question,
@@ -28,14 +28,14 @@ export function handleAddQuestion(question) {
 }
 
 function AddAnswerQuestion(answer) {
-  console.log("Answer:", answer);
+  // console.log("Answer:", answer);
   return {
     type: SAVE_ANSWER,
     answer,
   };
 }
 export function handleAddAnswerQuestion(answer) {
-  console.log("handleAddAnswerQuestion:", answer);
+  // console.log("handleAddAnswerQuestion:", answer);
   return (dispatch, getState) => {
     return saveQuestionAnswer(answer).then(() =>
       dispatch(AddAnswerQuestion(answer))

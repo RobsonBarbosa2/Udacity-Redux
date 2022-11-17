@@ -12,7 +12,7 @@ class QuestionPage extends Component {
   handleClick = (e) => {
     e.preventDefault();
     const { dispatch } = this.props;
-    console.log("clicked");
+    // console.log("clicked");
     dispatch(
       handleAddAnswerQuestion({
         authedUser: this.props.authedUser.id,
@@ -25,13 +25,13 @@ class QuestionPage extends Component {
   render() {
     const { id } = this.props;
     const { questions, users } = this.props;
-    console.log("Erro?", questions[id]);
+    // console.log("Erro?", questions[id]);
 
     const hasVoted = () => {
       const { authedUser } = this.props;
 
-      console.log(questions[id].optionOne.votes.includes(authedUser.id));
-      console.log(questions[id].optionTwo.votes.includes(authedUser.id));
+      // console.log(questions[id].optionOne.votes.includes(authedUser.id));
+      // console.log(questions[id].optionTwo.votes.includes(authedUser.id));
 
       return (
         questions[id].optionOne.votes.includes(authedUser.id) ||
