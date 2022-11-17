@@ -52,8 +52,8 @@ class Question extends Component {
         {this.state.switchList ? (
           <ul>
             {questionListAnswered.map((question) => (
-              <Link to={`/questions/${question.id}`}>
-                <li key={question.id} className="my-10">
+              <Link key={question.id} to={`/questions/${question.id}`}>
+                <li className="my-10">
                   <UnitQuestion quest={question} />
                 </li>
               </Link>
@@ -62,8 +62,8 @@ class Question extends Component {
         ) : (
           <ul>
             {questionListNotAnswered.map((question) => (
-              <Link to={`/questions/${question.id}`}>
-                <li key={question.id} className="my-10">
+              <Link key={question.id} to={`/questions/${question.id}`}>
+                <li className="my-10">
                   <UnitQuestion quest={question} />
                 </li>
               </Link>

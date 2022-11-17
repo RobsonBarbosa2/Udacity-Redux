@@ -102,7 +102,6 @@ class QuestionPage extends Component {
       <div>
         {questions[id] ? (
           <div>
-            {" "}
             <div>
               <div className="flex flex-col items-center bg-indigo-300 md:mx-80 py-10">
                 <div>Asked by Author {questions[id].author}</div>
@@ -146,7 +145,7 @@ class QuestionPage extends Component {
                           : null}
                       </div>
                     </div>
-                    <di>
+                    <div>
                       <input
                         name={1}
                         onChange={this.handleChange}
@@ -174,7 +173,7 @@ class QuestionPage extends Component {
                           ? this.verifyQtdVotes("optionTwo") + " votes"
                           : null}
                       </div>
-                    </di>
+                    </div>
                     <div className="">
                       {this.state.voted !== true ? (
                         <button
